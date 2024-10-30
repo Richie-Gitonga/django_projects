@@ -1,0 +1,21 @@
+{% extends 'layouts/blank.html' %} {% block content %}
+
+<div class="max-w-4xl mx-auto px-8 py-24">
+  <h1 class="text-2xl font-sans font-bold text-center my-12">Results</h1>
+  <ul class="w-full flex flex-col items-center gap-4">
+    {% for post in page_obj.object_list %}
+        {% include "includes/post.html" %}
+    {% endfor %}
+  </ul>
+    <center>
+      {%if page_obj.has_previous %} {# whether the previous page exists #}
+          <a href="?page={{page_obj.previous_page_number}}">Prev</a> {# link to the prev page #}
+      {% endif %}
+      <span>{{page_obj.number}}</span> {# the current page number #}
+      {%if page_obj.has_next %} {# whether the next page exists #}
+          <a href="?page={{page_obj.next_page_number}}">Next</a> {# link to the next page #}
+      {% endif %}
+  </center>
+</div>
+
+{% endblock %}

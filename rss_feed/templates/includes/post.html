@@ -1,0 +1,21 @@
+{% load static %}
+<li
+  class="px-8 py-4 w-full max-w-[30rem] flex items-center gap-4 bg-[#f2f2f2] rounded-sm shadow-sm hover:shadow-md shadow-[#dcdcdc]"
+>
+  <img class="w-20 h-20 fill-[#2d2d2d]" src="{% static "images/logo.svg" %}" alt="" />
+  <div>
+    <h1 class="text-xl text-[#2d2d2d] font-semibold">{{post.title}}</h1>
+    <div class="flex items-center justify-between">
+      <div class="text-xs text-[#4f4f4f]">
+        <p class> {{ post.published }}</p>
+        <p class="">
+          <span class="font-semibold text-[#2d2d2d]">Source:</span>
+          <a href="" class="font-regular hover:underline">{{ post.source }}</a>
+        </p>
+      </div>
+      <a href="{{ post.link }}" class="px-4 py-2 rounded-md bg-[#4a8a91] text-[#f0f0f0] cursor-pointer"
+        >Read</a
+      >
+    </div>
+  </div>
+</li>
